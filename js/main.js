@@ -22,13 +22,22 @@
     toggle.setAttribute("aria-expanded", "true");
     closeBtn.focus();
     document.addEventListener("keydown", onDrawerKeydown);
+    document.addEventListener("click", onOutsideClick);
   }
 
   function closeDrawer() {
     drawer.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
     document.removeEventListener("keydown", onDrawerKeydown);
+    document.removeEventListener("click", onOutsideClick);
     toggle.focus();
+  }
+
+  /* Tapping the blurred page area left of the open drawer closes it. */
+  function onOutsideClick(e) {
+    if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
+      closeDrawer();
+    }
   }
 
   function onDrawerKeydown(e) {

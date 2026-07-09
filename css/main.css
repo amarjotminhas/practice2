@@ -237,11 +237,11 @@ ul { margin: 0 0 var(--space-2); padding-left: 1.2em; }
 
 .drawer-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: var(--space-2);
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid rgba(248, 245, 240, 0.25);
+  position: relative;
+  min-height: 44px;
+  padding: 0 52px;
 }
 
 .drawer-brand {
@@ -250,6 +250,14 @@ ul { margin: 0 0 var(--space-2); padding-left: 1.2em; }
   font-size: 1.3rem;
   color: var(--bg);
   letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.drawer-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .drawer-close {
